@@ -23,8 +23,17 @@ public class DemoController {
     // Spring already would have crated object for it as CricketCoach is annotated with @Component,
     // The created object is injected as dependency through a constructor here
     // that injected dependency is asigned to the private variable and used by business logic to perform required business logic.
-    @Autowired
+   /* @Autowired
     public void DemoController( Coach coach){
+        this.coach = coach;
+    }*/
+
+
+    // here intead of constructor we are using a setter method or as a matter of fact any method name
+    // to set the private Coach attribute with the passed parameter to the setter method.
+    // This is precisely called as setter injection.
+    @Autowired
+    public void setCoach(Coach coach) {
         this.coach = coach;
     }
 
